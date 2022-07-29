@@ -2,18 +2,48 @@ import { useState } from "react";
 import Card from "../UI/Card";
 import DummyPlaces from "../../servers/DummyPlaces";
 import tours from "../../assets/tours.jpg";
+import ReactPaginate from "react-paginate";
 
 const Tours = () => {
   const [places, setPlaces] = useState(DummyPlaces);
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const placesPerPage = 8;
+  const pagesVisited = pageNumber * placesPerPage;
+
+  const cradColumnClass = "col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4";
+
+  const displayPlaces = places
+    .slice(pagesVisited, pagesVisited + placesPerPage)
+    .map((place) => {
+      const { id, img, title, city, country, continent, price } = place;
+      return (
+        <div key={id} className={cradColumnClass}>
+          <Card
+            img={img}
+            title={title}
+            city={city}
+            country={country}
+            continent={continent}
+            price={price}
+          />
+        </div>
+      );
+    });
+
+  const pageCount = Math.ceil(places.length / placesPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   const filterPlaces = (continent) => {
+    setPageNumber(0);
     const updatePlaces = DummyPlaces.filter((current) => {
       return current.continent === continent;
     });
     setPlaces(updatePlaces);
   };
-
-  const cradColumnClass = "col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4";
 
   return (
     <>
@@ -67,23 +97,20 @@ const Tours = () => {
           </button>
         </div>
 
-        <div className="row">
-          {places.map((place) => {
-            const { id, img, title, city, country, continent, price } = place;
-            return (
-              <div key={id} className={cradColumnClass}>
-                <Card
-                  img={img}
-                  title={title}
-                  city={city}
-                  country={country}
-                  continent={continent}
-                  price={price}
-                />
-              </div>
-            );
-          })}
-        </div>
+        <div className="row">{displayPlaces}</div>
+
+        <ReactPaginate
+          previousLabel="&laquo;"
+          nextLabel="&raquo;"
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName="pagination justify-content-center"
+          pageLinkClassName="page-item page-link"
+          previousLinkClassName="page-item page-link"
+          nextLinkClassName="page-item page-link"
+          disabledClassName="page-item disabled"
+          activeClassName="page-item active "
+        />
       </div>
     </>
   );
