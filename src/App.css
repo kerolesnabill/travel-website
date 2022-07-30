@@ -1,0 +1,17 @@
+@media (min-width: 992px) {
+    .heading {
+        font-size: 3.5rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .heading {
+        font-size: 5rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .feature:nth-of-type(even) .feature__content {
+        order: 2;
+    }
+}

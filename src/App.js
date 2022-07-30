@@ -7,8 +7,15 @@ import Error from "./components/pages/Error";
 import Footer from "./components/commen/Footer";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+  Aos.init({
+    duration: 1200,
+    delay: 100,
+    offset: 300,
+  });
   return (
     <>
       <BrowserRouter>
