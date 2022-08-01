@@ -47,7 +47,7 @@ const Tours = () => {
 
   return (
     <>
-      <div className="mb-5">
+      <div className="my-5">
         <img style={{ width: "100%", height: "auto" }} src={tours} />
       </div>
       <div className="container">
@@ -56,7 +56,7 @@ const Tours = () => {
         </h1>
         <div className="d-flex justify-content-around mb-5">
           <button
-            className="btn btn-info"
+            className="btn btn-info btn-filter"
             onClick={() => {
               setPlaces(DummyPlaces);
             }}
@@ -64,7 +64,7 @@ const Tours = () => {
             All
           </button>
           <button
-            className="btn btn-primary"
+            className="btn btn-primary btn-filter"
             onClick={() => {
               filterPlaces("Asia");
             }}
@@ -72,7 +72,7 @@ const Tours = () => {
             Asia
           </button>
           <button
-            className="btn btn-primary"
+            className="btn btn-primary btn-filter"
             onClick={() => {
               filterPlaces("Africa");
             }}
@@ -80,7 +80,7 @@ const Tours = () => {
             Africa
           </button>
           <button
-            className="btn btn-primary"
+            className="btn btn-primary btn-filter"
             onClick={() => {
               filterPlaces("Europe");
             }}
@@ -88,7 +88,7 @@ const Tours = () => {
             Europe
           </button>
           <button
-            className="btn btn-primary"
+            className="btn btn-primary btn-filter"
             onClick={() => {
               filterPlaces("North America");
             }}
