@@ -1,4 +1,8 @@
 import about from "../../assets/about.jpg";
+import tech1 from "../../assets/tech-1.svg";
+import tech2 from "../../assets/tech-2.svg";
+import tech3 from "../../assets/tech-3.svg";
+import tech4 from "../../assets/tech-4.svg";
 
 const About = () => {
   return (
@@ -27,22 +31,47 @@ const About = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut veritatis
           alias doloribus dignissimos non veniam tempore nihil, consequuntur
           blanditiis perferendis et ratione enim ullam deleniti accusantium
-          dicta? Ipsam voluptatum sunt exercitationem! Natus delectus ipsam
-          atque dolores maxime. Qui, quibusdam! Possimus, vitae assumenda dolor
-          doloremque aliquam pariatur repellat unde cum distinctio.
-        </p>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti
-          beatae sit, ut obcaecati aut in architecto omnis exercitationem quae
-          sunt tempora quam laboriosam quis numquam voluptatum, cumque
-          aspernatur delectus eligendi fugit blanditiis! Provident, blanditiis
-          culpa.
+          dicta? Ipsam voluptatum sunt exercitationem!
         </p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio
           ducimus provident veniam placeat cum illum natus, autem officiis
           mollitia eos quis, totam tempore labore nesciunt!
         </p>
+      </div>
+      <div className="tech-container mx-auto">
+        <div className="container row my-5 mx-auto">
+          <img
+            className="col-12 col-md-6 col-lg-4 col-xl-2 p-5 tech-img"
+            src={tech1}
+            alt=""
+          />
+          <img
+            className="col-12 col-md-6 col-lg-4 col-xl-2 p-5 tech-img"
+            src={tech2}
+            alt=""
+          />
+          <img
+            className="col-12 col-md-6 col-lg-4 col-xl-2 p-5 tech-img"
+            src={tech3}
+            alt=""
+          />
+          <img
+            className="col-12 col-md-6 col-lg-4 col-xl-2 p-5 tech-img"
+            src={tech4}
+            alt=""
+          />
+          <img
+            className="col-12 col-md-6 col-lg-4 col-xl-2 p-5 tech-img"
+            src={tech1}
+            alt=""
+          />
+          <img
+            className="col-12 col-md-6 col-lg-4 col-xl-2 p-5 tech-img"
+            src={tech2}
+            alt=""
+          />
+        </div>
       </div>
     </>
   );
