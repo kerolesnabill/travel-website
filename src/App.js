@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   Aos.init({
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
